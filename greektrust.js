@@ -34,22 +34,20 @@ const properties = [
 prompt.start();
 
 prompt.get(properties, function (err, result) {
+
   var apartment_type, command_alias, corporation_to_bore_ratio, cost_ADD_GUEST, cost_ALLOT_WATER, cost_of_water_consumed, net_water_consumed, no_of_guests, parsed_commands_with_args, ratio_extraction_string, water_ADD_GUEST, water_ALLOT_WATER;
+
+  net_water_consumed = 0;
+  cost_of_water_consumed = 0;
+  no_of_guests = 0;
 
   if (err) {
     return onErr(err);
   }
 
-  while (true) {
-   const x = prompt("\n", "");
-
-    if (!x) {
-      break;
-    }
-
-    parsed_commands_with_args = x.split(" ");
-    debug("parsed_commands_with_args: ", parsed_commands_with_args);
-    command_alias = parsed_commands_with_args[0];
+    // parsed_commands_with_args = prompt.split(" ");
+    // debug("parsed_commands_with_args: ", parsed_commands_with_args);
+    // command_alias = parsed_commands_with_args[0];
 
     if (command_alias === ALLOT_WATER) {
 
@@ -80,7 +78,7 @@ prompt.get(properties, function (err, result) {
         }
       }
     }
-  }
+  
 
   console.log('Command-line input received:');
   console.log(result);

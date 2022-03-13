@@ -1,10 +1,17 @@
-import  debug  from './debugger';
-import { ADD_GUESTS, ALLOT_WATER, BILL } from './constant';
-import { calculate_for_allot_water } from './fn_allot_water';
-import { calculate_for_add_guests } from './fn_add_guest';
+const readline = require('readline');
 
-function main() {
+const debug = require('./debugger.js');
+
+const { ADD_GUESTS, ALLOT_WATER, BILL } = require('./constant.js');
+
+// Cost and Consumption calculations functions
+const calculate_for_allot_water = require('./fn_allot_water.js')
+const calculate_for_add_guests = require('./fn_add_guest.js')
+
+var fnName = function main() {
   var apartment_type, command, command_alias, corporation_to_bore_ration, cost_ADD_GUEST, cost_ALLOT_WATER, cost_of_water_consumed, input_file, net_water_consumed, no_of_guests, opened_file_ptr, parsed_commands_with_args, ratio_extraction_string, water_ADD_GUEST, water_ALLOT_WATER;
+  input_file = sys.argv[1]  
+    opened_file_ptr = open(input_file,'r')
   
   
   net_water_consumed = 0;
@@ -53,6 +60,7 @@ function main() {
   }
 }
 
-if (__name__ === "__main__") {
-  main();
+
+if (require.main === module) {
+  fnName();
 }
