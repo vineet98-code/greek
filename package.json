@@ -3,12 +3,14 @@
   "version": "2.0.0",
   "description": "Greek challenge",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mathjs": "^10.4.0",
     "prompt": "^1.2.2",
     "prompt-sync": "^4.2.0"
   }
